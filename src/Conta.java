@@ -9,6 +9,11 @@ public class Conta {
         this.saldo += valor; //this opcional, serve apenas para referênciar.
     }
     public boolean saca(double valor){ //Boolean vai me retornar se sacou ou não.
-
+        if(this.saldo >= valor){
+            this.saldo -= valor;
+            return true; //Retorna o true do boolean.
+        }else{
+            return false;
+        }
     }
 }
