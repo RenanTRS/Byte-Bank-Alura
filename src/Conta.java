@@ -16,4 +16,8 @@ public class Conta {
             return false;
         }
     }
+    public boolean transfere(double valor, Conta destino){
+        
+
+    }
 }
