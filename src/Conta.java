@@ -20,9 +20,12 @@ public class Conta {
         if(this.saldo >= valor){
             this.saldo -= valor;
             destino.deposita(valor);
+            System.out.println("Transferência feita com sucesso!");
             return true;
         }else{
+            System.out.println("Transferência Interrompida: saldo insuficiênte!");
             return false;
+            
         }
 
     }
