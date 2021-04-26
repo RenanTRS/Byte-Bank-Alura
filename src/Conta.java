@@ -1,12 +1,12 @@
 public class Conta {
     //Atributos
-    double saldo;
+    private double saldo;
     int agencia;
     int numero;
-    String titular;
+    Cliente titular;
 
     public void deposita(double valor){ //Método deposita com void (void para não me informar nada depois de executar.)
-        this.saldo += valor; //this opcional, serve apenas para referênciar.
+        this.saldo += valor;
     }
     public boolean saca(double valor){ //Boolean vai me retornar se sacou ou não.
         if(this.saldo >= valor){
@@ -16,17 +16,17 @@ public class Conta {
             return false;
         }
     }
-    public boolean transfere(double valor, Conta destino){
+    public boolean transfere(double valor, Conta destino){ //Método transfere valor para conta
         if(this.saldo >= valor){
             this.saldo -= valor;
             destino.deposita(valor);
-            System.out.println("Transferência feita com sucesso!");
             return true;
         }else{
-            System.out.println("Transferência Interrompida: saldo insuficiênte!");
-            return false;
-            
+            return false;   
         }
 
+    }
+    public double getSaldo(){ //Método mostra valor.
+        return this.saldo;
     }
 }
