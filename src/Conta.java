@@ -28,6 +28,8 @@ public class Conta {
     public double getSaldo(){ //Método mostra valor.
         return this.saldo;
     }
+    
+    //Agencia-------------------------------------------------------------------
     public int getAgencia() { //Método que mostra a agência.
         return agencia;
     }
@@ -39,4 +41,18 @@ public class Conta {
             this.agencia = agencia;
         }
     }
+
+    //Numero--------------------------------------------------------------------
+    public int getNumero() {
+        return numero;
+    }
+    public void setNumero(int numero) {
+        if(numero < 0){
+            numero *= -1;
+            this.numero = numero;
+        }else{
+            this.numero = numero;
+        }
+    }
+
 }
