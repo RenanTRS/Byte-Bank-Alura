@@ -17,8 +17,8 @@ public class TestaMetodo {
         System.out.println(contaMarcela.getSaldo());
         System.out.println(contaPaulo.getSaldo());
 
-        contaPaulo.titular.nome = "Paulo";
-        System.out.println(contaPaulo.titular.nome);
+        contaPaulo.getTitular().setNome("Paulo");
+        System.out.println(contaPaulo.getTitular().getNome());
 
     }
 }

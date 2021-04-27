@@ -3,7 +3,7 @@ public class Conta {
     private double saldo;
     private int agencia;
     private int numero;
-    Cliente titular;
+    private Cliente titular;
 
     public void deposita(double valor){ //Método deposita com void (void para não me informar nada depois de executar.)
         this.saldo += valor;
@@ -43,16 +43,24 @@ public class Conta {
     }
 
     //Numero--------------------------------------------------------------------
-    public int getNumero() {
+    public int getNumero() { //Método que mostra o numero
         return numero;
     }
-    public void setNumero(int numero) {
+    public void setNumero(int numero) { //Método que insere o numero
         if(numero < 0){
             numero *= -1;
             this.numero = numero;
         }else{
             this.numero = numero;
         }
+    }
+
+    //Titular------------------------------------------------------------------
+    public Cliente getTitular() { //Método que mostra o titular
+        return titular;
+    }
+    public void setTitular(Cliente titular) { //Método que insere o titular
+        this.titular = titular;
     }
 
 }
