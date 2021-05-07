@@ -3,7 +3,7 @@ public class ContaCorrente extends Conta{
         super(agencia, numero);
     }
     
-    @Override
+    @Override //Anotação informando que o método será reescrito.
     public boolean saca(double valor) {
         // TODO Auto-generated method stub
         return super.saca(valor);
