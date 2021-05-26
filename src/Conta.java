@@ -21,9 +21,7 @@ public abstract class Conta {
     }
 
     //Deposita-----------------------------------------
-    public void deposita(double valor){ //Método deposita com void (void para não me informar nada depois de executar.)
-        this.saldo += valor;
-    }
+    public abstract void deposita(double valor); //Método deposita com void (void para não me informar nada depois de executar.)
 
     //Saca-----------------------------------------------
     public void saca(double valor){
