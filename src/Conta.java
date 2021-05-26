@@ -1,14 +1,11 @@
-public class Conta {
+public abstract class Conta {
     //Atributos
     private double saldo;
     private int agencia;
     private int numero;
-    private Cliente titular;
-    private static int total;
 
     //Construtor--------------------------
     public Conta(int agencia, int numero){
-        Conta.total++;
         if(agencia <= 0){
             agencia *= -1;
             this.agencia = agencia;
@@ -21,12 +18,6 @@ public class Conta {
         }else{
             this.numero = numero;
         }
-        System.out.println("Estou criando uma Conta com o número:" +this.numero);
-    }
-
-    //Total static--------------------------------------
-    public static int getTotal() {
-        return total;
     }
 
     //Deposita-----------------------------------------
@@ -35,24 +26,17 @@ public class Conta {
     }
 
     //Saca-----------------------------------------------
-    public boolean saca(double valor){ //Boolean vai me retornar se sacou ou não.
-        if(this.saldo >= valor){
-            this.saldo -= valor;
-            return true; //Retorna o true do boolean.
-        }else{
-            return false;
+    public void saca(double valor){
+        if(this.saldo < valor){
+            throw new SaldoInsuficienteException("Saldo: R$" + this.saldo + " Valor: R$" + valor + " Saldo insuficiente.");
         }
+        this.saldo -= valor;
     }
 
     //Transfere----------------------------------------
-    public boolean transfere(double valor, Conta destino){ //Método transfere valor para conta
-        if(this.saldo >= valor){
-            this.saldo -= valor;
-            destino.deposita(valor);
-            return true;
-        }else{
-            return false;   
-        }
+    public void transfere(double valor, Conta destino){ //Método transfere valor para conta
+        this.saca(valor);
+        destino.deposita(valor);
     }
 
     //Saldo-------------------------------------------
@@ -68,14 +52,6 @@ public class Conta {
     //Numero--------------------------------------------------------------------
     public int getNumero() { //Método que mostra o numero
         return this.numero;
-    }
-
-    //Titular------------------------------------------------------------------
-    public Cliente getTitular() { //Método que mostra o titular
-        return titular;
-    }
-    public void setTitular(Cliente titular) { //Método que insere o titular
-        this.titular = titular;
     }
 
 }
