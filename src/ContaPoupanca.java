@@ -5,6 +5,7 @@ public class ContaPoupanca extends Conta{
 
     @Override
     public void deposita(double valor){
-        this.saldo += valor;
+        super.saldo += valor;
     
+    }
 }

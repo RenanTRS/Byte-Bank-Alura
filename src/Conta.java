@@ -1,6 +1,6 @@
 public abstract class Conta {
     //Atributos
-    private double saldo;
+    protected double saldo;
     private int agencia;
     private int numero;
 
